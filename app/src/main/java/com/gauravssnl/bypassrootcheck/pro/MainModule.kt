@@ -98,7 +98,7 @@ class MainModule(base: XposedInterface, param: ModuleLoadedParam) : XposedModule
                         val propName =  callback.args[0] as String
                         // Hook SELinux check
                         if ("ro.build.selinux" == propName) {
-                            callback.returnAndSkip("1")
+                            callback.returnAndSkip(false)
                         }
                     }
                 }
